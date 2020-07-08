@@ -20,7 +20,6 @@ class CreateProductsTable extends Migration
             $table->string('type');
             $table->string('amount');
             $table->string('price');
-
             $table->timestamps();
         });
     }

@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1>Your products</h1>
+    <a href="{{ route('home') }}">Back Home</a>
     <table>
         <tr>
             <td>#ID</td>
@@ -32,10 +33,10 @@
             <td>{{$productsInfo->price}}</td>
             <td>{{$productsInfo->created_at}}</td>
             <td>{{$productsInfo->updated_at}}</td>
-            <td><a href="">Show products</a></td>
+            <td><a href="{{ route('products.show', ['product' => $productsInfo->id]) }}">Show products</a></td>
             <td><a href="">Edit</a></td>
             <td>
-                <form action="{{ route('products.destroy', ['product' => $productsInfo->id]) }}">
+                <form action="{{ route('products.destroy', ['product' => $productsInfo->id]) }}" method="POST">
                     @csrf
                     @method('delete')
                     <input type="submit" value="Delete">
