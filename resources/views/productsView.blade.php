@@ -18,7 +18,9 @@
             <td>Price</td>
             <td>Created</td>
             <td>Updated</td>
-            <td>Actions</td>
+            <td>Show</td>
+            <td>Edit</td>
+            <td>Delete</td>
         </tr>
         @foreach ($products as $productsInfo)
         <tr>
@@ -30,12 +32,13 @@
             <td>{{$productsInfo->price}}</td>
             <td>{{$productsInfo->created_at}}</td>
             <td>{{$productsInfo->updated_at}}</td>
+            <td><a href="">Show products</a></td>
+            <td><a href="">Edit</a></td>
             <td>
-                <a href="">Delete</a>
-                <form action="">
+                <form action="{{ route('products.destroy', ['product' => $productsInfo->id]) }}">
                     @csrf
-                    @method('put')
-                    <input type="submit" value="Edit">
+                    @method('delete')
+                    <input type="submit" value="Delete">
                 </form>
             </td>
         </tr>
