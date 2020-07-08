@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1><a href="">View Products</a></h1>
+    <h1><a href="{{ route('products.index') }}">View Products</a></h1>
     <h1><a href="{{ route('products.create') }}">Create Product</a></h1>
 </body>
 </html>
