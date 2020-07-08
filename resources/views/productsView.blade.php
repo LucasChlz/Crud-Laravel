@@ -34,7 +34,7 @@
             <td>{{$productsInfo->created_at}}</td>
             <td>{{$productsInfo->updated_at}}</td>
             <td><a href="{{ route('products.show', ['product' => $productsInfo->id]) }}">Show products</a></td>
-            <td><a href="">Edit</a></td>
+            <td><a href="{{ route('products.edit', ['product' => $productsInfo->id]) }}">Edit</a></td>
             <td>
                 <form action="{{ route('products.destroy', ['product' => $productsInfo->id]) }}" method="POST">
                     @csrf
